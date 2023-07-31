@@ -6,9 +6,8 @@
 // task c = 15;
 // task d = 1;
 
-
 // kaise pata chalta hai ki code sync hai yaa async ?
-// if you are using any of these in your code then your code is asynchronous : 
+// if you are using any of these in your code then your code is asynchronous :
 // 1. setTimeout
 // 2. setInterval
 // 3. fetch
@@ -17,10 +16,12 @@
 // 6. XMLHttpRequest
 
 // async js hai kya ?
+// kai baar hamren saath aisa hoota hai kki hume nhi pta hoota ki servr se info hamare pas kah tak ayegi....toh uss case me hum sync js use mhi kr sakte isse nipatne ke liye hum og async code likh dete hai taaki blocking naa ho and jabh bhi ans aaye hamara answe ke respect me chalne waaala code chal jaaye!!!
+
 // js is not asynchronous
 // async ki poori kahani
 // single threading vs multiple threads
-// callbacks 
+// callbacks
 // promises
 // then and catch
 // try and catch
