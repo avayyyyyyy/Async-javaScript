@@ -1,5 +1,3 @@
-# Async-javaScript
-
 # Synchronous vs Asynchronous Code in JavaScript
 
 ## Synchronous Code
