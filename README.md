@@ -100,4 +100,4 @@ displayData();
 Conclusion
 Understanding the difference between synchronous and asynchronous JavaScript is crucial for writing efficient and responsive applications. Synchronous code executes tasks sequentially, while asynchronous code allows tasks to run concurrently and improves performance. Using callbacks, promises, or async/await, you can handle asynchronous operations efficiently in your JavaScript projects.
 
-#Remember to choose the appropriate approach based on the specific requirements of your program or application.
+##Remember to choose the appropriate approach based on the specific requirements of your program or application.
