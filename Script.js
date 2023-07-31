@@ -25,20 +25,32 @@
 // console.log("Hello bacho!2");
 
 // js is not asynchronous
+// as we know that js is an syncronous language because it executes the code line by line coz it is interpreted language
+
+console.log("hello1");
+console.log("hello2");
+setTimeout(() => {
+  console.log("hello3");
+}, 0);
+console.log("hello4"); // it will print like 1,2.4,3 because of the side stack the async function will move to the side stack and after the the excution of main stak it calls the
+
 // async ki poori kahani
 // single threading vs multiple threads
+// single thread mtlb ek time pe sirf ek time pe ek hi line execute hoogi and multi thread is like multi tasking which allow us execute multiple lines simultaneously.
 
 // callbacks
 // callback function woh funcion hoote hai jinko hum thode time ke baad waapis call back kiya jaata hai !
 
-// in this print is the call back function which is called after a certain time when it is called again.
-setTimeout(() => {
-  print(); //callback function called.
-}, 5000);
+// then catch callback async await //[it gives us the request]
 
-function print() {
-  console.log("Hello bacho!2");
-}
+// in this print is the call back function which is called after a certain time when it is called again.
+// setTimeout(() => {
+//   print(); //callback function called.
+// }, 5000);
+
+// function print() {
+//   console.log("Hello bacho!2");
+// }
 // promises
 // then and catch
 // try and catch
