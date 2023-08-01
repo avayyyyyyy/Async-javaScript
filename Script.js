@@ -86,23 +86,66 @@
 
 // user will ask for a nuber bet 0-9 if the number is below 5 reslve if not reject
 // let num = 7;
-let ans = new Promise((res, rej) => {
-  var num = Math.floor(Math.random(0, 1) * 10);
-  console.log(num ,"num");
-  if (num > 5) {
-    res();
-  } else {
-    rej();
-  }
+// let ans = new Promise((res, rej) => {
+//   var num = Math.floor(Math.random(0, 1) * 10);
+//   console.log(num ,"num");
+//   if (num > 5) {
+//     res();
+//   } else {
+//     rej();
+//   }
+// });
+
+// ans
+//   .then((res) => {
+//     console.log("badaa hai");
+//   })
+//   .catch((rej) => {
+//     console.log("chota hai");
+//   });
+
+// sabse pehle ghar aao
+// gate kholo
+// freshen up hoojao
+// khana banao
+// or soo jao
+
+var p1 = new Promise((res, rej) => {
+  return res("sabse pehle ghar aao");
 });
 
-ans
-  .then((res) => {
-    console.log("badaa hai");
-  })
-  .catch((rej) => {
-    console.log("chota hai");
+var p2 = p1.then((data) => {
+  console.log(data);
+  return new Promise((res, rej) => {
+    return res("gate kholo");
   });
+});
+
+var p3 = p2.then((data) => {
+  console.log(data);
+  return new Promise((res, rej) => {
+    return res("freshen up hoojao");
+  });
+});
+
+var p4 = p3.then((data) => {
+  console.log(data);
+  return new Promise((res, rej) => {
+    return res("khana banao");
+  });
+});
+
+var p5 = p4.then((data) => {
+  console.log(data);
+  return new Promise((res, rej) => {
+    return res("Sooo jaoooooooooooooooo");
+  });
+});
+
+p5.then((data) => {
+  console.log(data);
+});
+
 // then and catch
 // try and catch
 // async await
