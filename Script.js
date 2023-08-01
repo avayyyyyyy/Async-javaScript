@@ -20,19 +20,20 @@
 
 // now the following line will execute after 2sec.
 // setTimeout(() => {
-//   console.log("Hello bacho!");
+// console.log("Hello bacho!");
 // }, 12000);
 // console.log("Hello bacho!2");
 
 // js is not asynchronous
 // as we know that js is an syncronous language because it executes the code line by line coz it is interpreted language
 
-console.log("hello1");
-console.log("hello2");
-setTimeout(() => {
-  console.log("hello3");
-}, 0);
-console.log("hello4"); // it will print like 1,2.4,3 because of the side stack the async function will move to the side stack and after the the excution of main stak it calls the
+// console.log("hello1");
+// console.log("hello2");
+// setTimeout(() => {
+//     console.log("hello3");
+// }, 0);
+// console.log("hello4");
+// it will print like 1,2.4,3 because of the side stack the async function will move to the side stack and after the the excution of main stak it calls the
 
 // async ki poori kahani
 // single threading vs multiple threads
@@ -45,13 +46,63 @@ console.log("hello4"); // it will print like 1,2.4,3 because of the side stack t
 
 // in this print is the call back function which is called after a certain time when it is called again.
 // setTimeout(() => {
-//   print(); //callback function called.
+// print(); //callback function called.
 // }, 5000);
 
 // function print() {
-//   console.log("Hello bacho!2");
+// console.log("Hello bacho!2");
 // }
+
+// async code likhne ke liye
+// to call something
+// fetch
+// axios
+// XMLHttpRequest
+// setTimeout
+// setInterval
+
+// to get output of something.
+// callback
+// then catch async await
+
 // promises
+// promises is like the real life entity in which there are majorly 3 states resolve reject and pending.
+
+// let num = new Promise((res, rej) => {
+//   if (!true) {
+//     res();
+//   } else {
+//     rej();
+//   }
+// });
+
+// num
+//   .then((res) => {
+//     console.log("Hogya");
+//   })
+//   .catch((rej) => {
+//     console.log("Nhi Hua");
+//   });
+
+// user will ask for a nuber bet 0-9 if the number is below 5 reslve if not reject
+// let num = 7;
+let ans = new Promise((res, rej) => {
+  var num = Math.floor(Math.random(0, 1) * 10);
+  console.log(num ,"num");
+  if (num > 5) {
+    res();
+  } else {
+    rej();
+  }
+});
+
+ans
+  .then((res) => {
+    console.log("badaa hai");
+  })
+  .catch((rej) => {
+    console.log("chota hai");
+  });
 // then and catch
 // try and catch
 // async await
