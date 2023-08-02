@@ -34,7 +34,7 @@ console.log("Hello bacho!2");
 Promises are used to handle asynchronous operations and represent the eventual completion or failure of an asynchronous task. They have three states: pending, fulfilled, or rejected.
 
 ```javascript
-Copy code
+
 let num = new Promise((resolve, reject) => {
   if (!true) {
     resolve();
@@ -56,7 +56,7 @@ num
 async and await are used to write asynchronous code in a more synchronous style. It allows you to write cleaner code by handling promises without chaining .then() and .catch().
 
 ```javascript
-Copy code
+
 async function getData() {****
   try {
     let raw = await fetch("https://randomuser.me/api/");
