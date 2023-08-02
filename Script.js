@@ -110,42 +110,52 @@
 // khana banao
 // or soo jao
 
-var p1 = new Promise((res, rej) => {
-  return res("sabse pehle ghar aao");
-});
+// var p1 = new Promise((res, rej) => {
+//   return res("sabse pehle ghar aao");
+// });
 
-var p2 = p1.then((data) => {
-  console.log(data);
-  return new Promise((res, rej) => {
-    return res("gate kholo");
-  });
-});
+// var p2 = p1.then((data) => {
+//   console.log(data);
+//   return new Promise((res, rej) => {
+//     return res("gate kholo");
+//   });
+// });
 
-var p3 = p2.then((data) => {
-  console.log(data);
-  return new Promise((res, rej) => {
-    return res("freshen up hoojao");
-  });
-});
+// var p3 = p2.then((data) => {
+//   console.log(data);
+//   return new Promise((res, rej) => {
+//     return res("freshen up hoojao");
+//   });
+// });
 
-var p4 = p3.then((data) => {
-  console.log(data);
-  return new Promise((res, rej) => {
-    return res("khana banao");
-  });
-});
+// var p4 = p3.then((data) => {
+//   console.log(data);
+//   return new Promise((res, rej) => {
+//     return res("khana banao");
+//   });
+// });
 
-var p5 = p4.then((data) => {
-  console.log(data);
-  return new Promise((res, rej) => {
-    return res("Sooo jaoooooooooooooooo");
-  });
-});
+// var p5 = p4.then((data) => {
+//   console.log(data);
+//   return new Promise((res, rej) => {
+//     return res("Sooo jaoooooooooooooooo");
+//   });
+// });
 
-p5.then((data) => {
-  console.log(data);
-});
+// p5.then((data) => {
+//   console.log(data);
+// });
+
+// async await
+//  jabh hi hum promises ka use krte hai tabh tabh hame .tthen and then and then again we have to use it but agar aapko in sabh chezo se bachna hai tabh hum use krte hai async await!!!
+
+async function getData() {
+  let raw = await fetch("https://randomuser.me/api/");
+  let ans = await raw.json();
+  console.log(ans);
+}
+
+getData();
 
 // then and catch
 // try and catch
-// async await
