@@ -149,9 +149,9 @@
 // async await
 //  jabh hi hum promises ka use krte hai tabh tabh hame .tthen and then and then again we have to use it but agar aapko in sabh chezo se bachna hai tabh hum use krte hai async await!!!
 
-async function getData() {
-  let raw = await fetch("https://randomuser.me/api/");
-  let ans = await raw.json();
+async function getData(){
+  let raw = await fetch("https://randomuser.me/api/")
+  let ans = await raw.json() 
   console.log(ans);
 }
 

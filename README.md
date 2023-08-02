@@ -1,103 +1,72 @@
-# Asynchronous JavaScript vs Synchronous JavaScript
+# Understanding Synchronous and Asynchronous JavaScript
 
-## Introduction
+In JavaScript, the terms synchronous and asynchronous refer to how tasks are executed and how they interact with each other. Let's dive into the concepts and examples provided in the code to understand them better.
 
-JavaScript is a powerful and versatile language used for both client-side and server-side development. Understanding the difference between synchronous and asynchronous code execution is crucial for writing efficient and responsive applications. This README aims to explain the concepts of synchronous and asynchronous JavaScript, their use cases, and how to work with each type of code.
+## Synchronous vs Asynchronous
 
-## Synchronous Code
+Synchronous code executes line by line, and each line must finish executing before the next line is executed. Asynchronous code, on the other hand, allows tasks to be executed independently, and the program does not wait for a task to complete before moving to the next one.
 
-In synchronous code execution, tasks are executed one after the other in a sequential manner. Each task waits for the previous one to complete before it starts. Synchronous code is the default behavior of JavaScript, where functions are executed in the order they appear in the code, and the program waits for each operation to finish before moving to the next one.
+### Synchronous Code
 
-### Example:
+In synchronous code, one task is completed before the next one starts. Here's an example:
 
 ```javascript
-console.log("Task 1");
-console.log("Task 2");
-console.log("Task 3");
-// Output: Task 1, Task 2, Task 3
+console.log("hello1");
+console.log("hello2");
+console.log("hello4");
+// Output: hello1
+//         hello2
+//         hello4
 ```
-Asynchronous Code
-In asynchronous code execution, tasks are non-blocking, and multiple tasks can be executed simultaneously. The program does not wait for the completion of a particular task before moving on to the next one. Asynchronous code is essential when dealing with tasks that may take time to complete, such as fetching data from servers or making API calls, to prevent blocking the execution of other tasks and improve the application's performance and responsiveness.
-
-Using Callbacks (Traditional Approach)
-Callbacks are a way to handle asynchronous operations in JavaScript. A callback function is passed as an argument to another function, which is then called when the asynchronous operation completes.
-
-Example:
+### Asynchronous Code
+In asynchronous code, tasks can run simultaneously without waiting for each other. Common ways to create asynchronous behavior are using setTimeout, fetch, axios, Promise, XMLHttpRequest, etc.
 
 ```javascript
 
-function fetchData(callback) {
-  setTimeout(() => {
-    const data = "Data from server";
-    callback(data);
-  }, 2000);
-}
-
-function displayData(data) {
-  console.log("Received data:", data);
-}
-
-console.log("Start");
-fetchData(displayData);
-console.log("End");
-// Output: Start, End, Received data: Data from server (after 2 seconds)
+setTimeout(() => {
+  console.log("Hello bacho!");
+}, 2000);
+console.log("Hello bacho!2");
+// Output: Hello bacho!2 (will be printed immediately)
+//         Hello bacho! (after 2 seconds)
 ```
-Using Promises (Modern Approach)
-Promises provide a more structured and elegant way to work with asynchronous code. A Promise represents the eventual completion or failure of an asynchronous operation, allowing us to chain .then() and .catch() methods for success and error handling, respectively.
-
-Example:
+### Promises
+Promises are used to handle asynchronous operations and represent the eventual completion or failure of an asynchronous task. They have three states: pending, fulfilled, or rejected.
 
 ```javascript
-function fetchData() {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const data = "Data from server";
-      resolve(data);
-    }, 2000);
-  });
-}
+Copy code
+let num = new Promise((resolve, reject) => {
+  if (!true) {
+    resolve();
+  } else {
+    reject();
+  }
+});
 
-console.log("Start");
-fetchData()
-  .then((data) => {
-    console.log("Received data:", data);
+num
+  .then(() => {
+    console.log("Hogya");
   })
-  .catch((error) => {
-    console.error("Error:", error);
+  .catch(() => {
+    console.log("Nhi Hua");
   });
-console.log("End");
-// Output: Start, End, Received data: Data from server (after 2 seconds)
-```
-Using Async/Await (Modern and Readable Approach)
-Async/await is a more modern approach introduced in ECMAScript 2017 (ES8). It allows writing asynchronous code in a more synchronous-looking style, making the code easier to read and maintain.
-
-Example:
+  ```
+// Output: Nhi Hua
+### Async/Await
+async and await are used to write asynchronous code in a more synchronous style. It allows you to write cleaner code by handling promises without chaining .then() and .catch().
 
 ```javascript
-function fetchData() {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const data = "Data from server";
-      resolve(data);
-    }, 2000);
-  });
-}
-
-async function displayData() {
+Copy code
+async function getData() {****
   try {
-    console.log("Start");
-    const data = await fetchData();
-    console.log("Received data:", data);
-    console.log("End");
+    let raw = await fetch("https://randomuser.me/api/");
+    let ans = await raw.json();
+    console.log(ans);
   } catch (error) {
-    console.error("Error:", error);
+    console.log("Error:", error);
   }
 }
-
-displayData();
-// Output: Start, Received data: Data from server (after 2 seconds), End
 ```
-Conclusion
-Understanding the difference between synchronous and asynchronous JavaScript is crucial for writing efficient and responsive applications. Synchronous code executes tasks sequentially, while asynchronous code allows tasks to run concurrently and improves performance. Using callbacks, promises, or async/await, you can handle asynchronous operations efficiently in your JavaScript projects.
-
-## Remember to choose the appropriate approach based on the specific requirements of your program or application.
+getData();
+## Conclusion
+In this README.md, we explored the differences between synchronous and asynchronous JavaScript code. We learned how asynchronous code can be managed using promises and how to use async/await to make asynchronous code look more like synchronous code. Understanding these concepts is crucial for writing efficient and responsive JavaScript applications
