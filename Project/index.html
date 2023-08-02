@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Await Project</title>
+</head>
+
+<body>
+    <h1>Async Await Project</h1>
+    <button id="stop">Stop</button>
+    <!-- Script -->
+    <script>
+        const setAbhi = () => {
+            document.querySelector('h1').innerHTML = "Hello baccho"
+            console.log("Abhi Jain")
+        }
+        setInterval(setAbhi, 1000);
+        // clearTimeout(setAbhi);
+        document.querySelector('button').addEventListener('click', () => {
+            clearInterval(setAbhi);
+            console.log("Stopped");
+        });
+    </script>
+</body>
+
+</html>
