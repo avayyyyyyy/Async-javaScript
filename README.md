@@ -14,10 +14,10 @@ In synchronous code, one task is completed before the next one starts. Here's an
 console.log("hello1");
 console.log("hello2");
 console.log("hello4");
+```
 // Output: hello1
 //         hello2
 //         hello4
-```
 ### Asynchronous Code
 In asynchronous code, tasks can run simultaneously without waiting for each other. Common ways to create asynchronous behavior are using setTimeout, fetch, axios, Promise, XMLHttpRequest, etc.
 
@@ -27,9 +27,9 @@ setTimeout(() => {
   console.log("Hello bacho!");
 }, 2000);
 console.log("Hello bacho!2");
+```
 // Output: Hello bacho!2 (will be printed immediately)
 //         Hello bacho! (after 2 seconds)
-```
 ### Promises
 Promises are used to handle asynchronous operations and represent the eventual completion or failure of an asynchronous task. They have three states: pending, fulfilled, or rejected.
 
@@ -66,7 +66,7 @@ async function getData() {****
     console.log("Error:", error);
   }
 }
-```
 getData();
+```
 ## Conclusion
 In this README.md, we explored the differences between synchronous and asynchronous JavaScript code. We learned how asynchronous code can be managed using promises and how to use async/await to make asynchronous code look more like synchronous code. Understanding these concepts is crucial for writing efficient and responsive JavaScript applications
