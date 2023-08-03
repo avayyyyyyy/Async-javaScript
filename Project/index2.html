@@ -13,13 +13,17 @@
     <button id="stop">Stop</button>
     <!-- Script -->
     <script>
+        let startDate;
         const sayDate = (str) => {
             console.log(str, Date.now());
         }
-        const startDate = setInterval(sayDate, 1000, "Abhi");
         document.querySelector("#stop").addEventListener('click', () => {
             clearInterval(startDate);
             console.log(("Stopped"))
+        })
+        document.querySelector("#start").addEventListener('click', () => {
+            startDate = setInterval(sayDate, 1000, "Abhi");
+            console.log(("started"))
         })
     </script>
 </body>
