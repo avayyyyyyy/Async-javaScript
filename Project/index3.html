@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Color Changer</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .wrapper {
+            height: 100vh;
+            width: 100vw;
+            background-color: #258225;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>2. Async Await Project</h1>
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+    </div>
+    <!-- Script -->
+    <script>
+        let colorChanger;
+        const wrapper = document.querySelector('.wrapper');
+        const start = document.querySelector('#start');
+        const stop = document.querySelector('#stop');
+
+        const randomColor = () => {
+            const hex = "0123456789ABCDEF"
+            let color = "#"
+            for (let i = 0; i < 6; i++) {
+                color += hex[Math.floor(Math.random() * 16)]
+            }
+            return color;
+        }
+        start.addEventListener('click', () => {
+            colorChanger = setInterval(() => {
+                wrapper.style.backgroundColor = randomColor();
+                console.log(randomColor())
+            }, 1000);
+        })
+        stop.addEventListener('click', () => {
+            clearInterval(colorChanger)
+            console.log("Ruk gaya!!!");
+        })
+
+
+    </script>
+</body>
+
+</html>
